@@ -1,0 +1,73 @@
+{
+  "name": "music_server",
+  "version": "0.1.0",
+  "author": "tix6",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src --color",
+    "server:dev": "NODE_ENV=development nodemon --watch src/server --exec 'babel-node src/server'"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "morgan": "^1.7.0",
+    "ramda": "^0.22.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-import": "^1.1.0",
+    "babel-plugin-ramda": "^1.1.6",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.26.1",
+    "csv-parse": "^1.2.0",
+    "enzyme": "^2.6.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta",
+    "mocha": "^3.2.0",
+    "nyc": "^10.0.0",
+    "should": "^11.1.2",
+    "sinon": "^1.17.7",
+    "style-loader": "^0.13.1",
+    "universal-fetch": "^1.0.0",
+    "webpack": "^2.1.0-beta.26",
+    "webpack-bundle-analyzer": "^1.5.0",
+    "webpack-dev-server": "^2.1.0-beta.10"
+  },
+  "nyc": {
+    "exclude": [
+      "build"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "latest",
+        {
+          "modules": false
+        }
+      ],
+      "stage-0",
+      "react"
+    ],
+    "plugins": [
+      "ramda",
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "style": "css"
+        }
+      ]
+    ]
+  }
+}
